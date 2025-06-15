@@ -1,9 +1,14 @@
 """
-    GENETIC BASED ALGORITHM per la generazione di profili alari.
-    Il seguente programma genera profili alari random e li ottimizza
-    seguendo un algoritmo di selezione a base genetica.
-    Sviluppato da Filippo Stazi, Università degli studi di Udine,
-    14/01/2023
+    GENETIC BASED ALGORITHM for UAV airfoil generation.
+    GBA for UAV Airfoil Generation is a Python-based tool developed
+    as part of my undergraduate thesis. It automates the generation
+    of airfoil shapes optimized to minimize a user-defined fitness
+    function. The tool leverages a simple single-objective genetic
+    algorithm and integrates with XFOIL for aerodynamic analysis,
+    enabling efficient performance evaluation of evolved airfoils
+    for UAV applications.
+    Filippo Stazi, Università degli studi di Udine,
+    July 2024
 
 """
 
@@ -17,6 +22,8 @@ import random
 import math
 import time
 import os
+import sys
+
 
 #MODULO ALGORITMO GENETICO
 from GBA import genetic_based_algorithm
@@ -47,9 +54,13 @@ def clean_environment():
 if __name__ == '__main__':
 
     with open("input.txt", "r") as f:
+        for _ in range(5): # skip first 5 lines
+            f.readline()
         dim_pop = int(f.readline())
         num_gen = int(f.readline())
         mod = f.readline()
+        make_video = f.readline().strip() == "True"
+        make_plots = f.readline().strip() == "True"
 
     #dim_pop, num_gen = 100, 15
     if dim_pop % 2 != 0: dim_pop += 1
@@ -94,7 +105,6 @@ if __name__ == '__main__':
 
 
     #CREAZIONE VIDEO
-    make_video = True
     if make_video:
         sys.stdout = StringIO()
         print("Creating video:")

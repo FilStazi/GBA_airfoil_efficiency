@@ -1,3 +1,10 @@
-20
-50
-prova_git
+# POPULATION DIMENSION [int]
+# MAXIMUM NUMBER OF GENERATIONS [int]
+# ANALYSIS NAME [str]
+# MAKE VIDEO (True, False) [bool]
+# MAKE ADDITIONAL PLOTS (True, False) [bool]
+100
+100
+github_test
+True
+True
