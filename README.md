@@ -1,6 +1,6 @@
 # 🌟 Genetic Based Algorithm for UAV airfoil generation
 
-> A short tagline or motto that makes your project stand out.
+> Automatic generation of UAV airfoils.
 
 [![License](https://img.shields.io/github/license/FilStazi/GBA_airfoil_efficiency)](LICENSE)
 [![Issues](https://img.shields.io/github/issues/FilStazi/GBA_airfoil_efficiency)](https://github.com/FilStazi/GBA_airfoil_efficiency/issues)
@@ -36,5 +36,11 @@ git clone https://github.com/FilStazi/GBA_airfoil_efficiency.git
 # Navigate to the project folder
 cd GBA_airfoil_efficiency
 
-# Install dependencies (example: for Node.js or Python)
-pip install -r requirements.txt
+# Create conda environment
+conda create GBA
+conda activate GBA
+
+# Install dependencies
+conda install matplotlib
+conda install shapely
+pip install moviepy
