@@ -24,7 +24,7 @@ from GBA import genetic_based_algorithm
 #GENERAZIONE VIDEO
 from moviepy.video.io.ImageSequenceClip import ImageSequenceClip
 from moviepy.video.io.VideoFileClip import VideoFileClip
-from moviepy.editor import *
+from moviepy import *
 
 #REDIRECT OUTPUT
 from io import StringIO
